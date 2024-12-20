@@ -1,4 +1,10 @@
 import { BsCaretDown } from "react-icons/bs";
+import { IoSearchSharp } from "react-icons/io5";
+import { RiDiscountPercentLine } from "react-icons/ri";
+import { IoCartOutline } from "react-icons/io5";
+import { CgLogIn } from "react-icons/cg";
+import { LuBadgeHelp } from "react-icons/lu";
+
 import { useState } from "react";
 
 const Header = () => {
@@ -11,6 +17,14 @@ const Header = () => {
   const hideSideMenu = () => {
     setToggle(false);
   };
+
+  const links = [
+    { liName: "Search", icon: <IoSearchSharp /> },
+    { liName: "Offers", icon: <RiDiscountPercentLine />, sup: "New" },
+    { liName: "Help", icon: <LuBadgeHelp /> },
+    { liName: "Sign In", icon: <CgLogIn /> },
+    { liName: "Cart", icon: <IoCartOutline /> },
+  ];
 
   return (
     <>
@@ -52,6 +66,20 @@ const Header = () => {
               className="inline text-[#f0851e] cursor-pointer"
             />
           </div>
+          <nav className="flex gap-10 list-none ml-auto text-[18px] font-semibold">
+            {links.map((link, i) => {
+              return (
+                <li
+                  key={i}
+                  className="flex items-center gap-2 hover:text-[#f0851e] duration-200"
+                >
+                  {link.icon}
+                  {link.liName}
+                  <sup className="text-[#f0851e] font-medium">{link.sup}</sup>
+                </li>
+              );
+            })}
+          </nav>
         </div>
       </header>
     </>
