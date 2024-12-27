@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import RestaurantCard from "./RestaurantCard";
 
 const Toprest = () => {
-  const [data, setDate] = useState();
+  const [data, setData] = useState([]);
 
   const fetchRestaurant = async () => {
     const response = await fetch(
       "http://localhost:5173/src/assets/restaurantChan.json"
     );
     const apiData = await response.json();
-    setDate(apiData);
+    setData(apiData);
   };
 
   useEffect(() => {
@@ -29,6 +30,11 @@ const Toprest = () => {
               <FaArrowRight />
             </div>
           </div>
+        </div>
+        <div className="flex overflow-hidden">
+          {data.map((d, i) => {
+            <RestaurantCard {...d} key={i} />;
+          })}
         </div>
       </div>
     </>
