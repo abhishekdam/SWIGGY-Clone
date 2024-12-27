@@ -65,6 +65,7 @@ const Category = () => {
             );
           })}
         </div>
+        <hr className="my-6 border-[2px]" />
       </div>
     </>
   );
