@@ -31,10 +31,10 @@ const Toprest = () => {
             </div>
           </div>
         </div>
-        <div className="flex overflow-hidden">
-          {data.map((d, i) => {
-            <RestaurantCard {...d} key={i} />;
-          })}
+        <div className="flex overflow-hidden gap-5">
+          {data?.map((d, i) => (
+            <RestaurantCard {...d} key={i} />
+          ))}
         </div>
       </div>
     </>
