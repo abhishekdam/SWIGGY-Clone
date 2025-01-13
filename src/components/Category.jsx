@@ -7,12 +7,12 @@ const Category = () => {
 
   const nextSlide = () => {
     if (categories.length - 8 == slide) return false;
-    setSlide(slide + 3);
+    setSlide(slide + 6);
   };
 
   const prevSlide = () => {
     if (slide == 0) return false;
-    setSlide(slide - 3);
+    setSlide(slide - 6);
   };
 
   const fetchCategory = async () => {

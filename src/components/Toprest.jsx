@@ -20,13 +20,13 @@ const Toprest = () => {
   const [slide, setSlide] = useState(0);
 
   const nextSlide = () => {
-    if (data.length - 5 == slide) return false;
-    setSlide(slide + 3);
+    if (data.length - 2 == slide) return false;
+    setSlide(slide + 4);
   };
 
   const prevSlide = () => {
     if (slide == 0) return false;
-    setSlide(slide - 3);
+    setSlide(slide - 4);
   };
 
   return (
@@ -57,7 +57,7 @@ const Toprest = () => {
               <div
                 key={i}
                 style={{
-                  transform: `translateX(-${slide * 100}%)`,
+                  transform: `translateX(-${slide * 80}%)`,
                 }}
                 className="duration-500 w-[270px] shrink-0"
               >
