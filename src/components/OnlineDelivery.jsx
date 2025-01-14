@@ -71,7 +71,7 @@ const OnlineDelivery = () => {
             {entryChips.map((item) => (
               <div
                 key={item.i}
-                className="p-2 rounded-full shadow border border-gray-300 flex items-center gap-1 text-nowrap cursor-pointer"
+                className="hover:border-green-500 hover:bg-green-50  duration-200 p-2 rounded-full shadow border border-gray-300 flex items-center gap-1 text-nowrap cursor-pointer"
               >
                 {item.btnName} {item.iconName}
               </div>

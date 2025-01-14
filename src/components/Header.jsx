@@ -66,7 +66,7 @@ const Header = () => {
               className="inline text-[#f0851e] cursor-pointer"
             />
           </div>
-          <nav className="flex gap-10 list-none ml-auto text-[18px] font-semibold">
+          <nav className="flex gap-7 list-none ml-auto text-[18px] font-semibold">
             {links.map((link, i) => {
               return (
                 <li
