@@ -29,7 +29,7 @@ const Category = () => {
 
   return (
     <>
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1200px] mx-auto pt-[100px]">
         <div className="flex my-3 items-center justify-between">
           <div className="text-[25px] font-bold">Whats on your mind?</div>
           <div className="flex">

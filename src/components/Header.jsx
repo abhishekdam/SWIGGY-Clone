@@ -46,9 +46,9 @@ const Header = () => {
           }}
         ></div>
       </div>
-      <header className="p-[15px] shadow-xl text-[#686b78] sticky top-0 bg-white z-[9999]">
+      <header className="p-[15px] shadow-xl text-[#686b78] fixed w-full top-0 bg-white z-[9999]">
         <div className="max-w-[1200px] mx-auto flex items-center">
-          <div className="w-[60px]">
+          <div className="w-[55px]">
             <img
               src="src/assets/swiggy-logo.webp"
               className="w-full"
