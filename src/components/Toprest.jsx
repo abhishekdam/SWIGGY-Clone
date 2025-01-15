@@ -31,7 +31,7 @@ const Toprest = () => {
 
   return (
     <>
-      <div className="max-w-[1200px] mx-auto mb-[100px]">
+      <div className="max-w-[1200px] mx-auto px-3 mb-[100px]">
         <div className="flex my-3 items-center justify-between">
           <div className="text-[25px] font-bold">
             Top restaurant chains in Saket
@@ -51,7 +51,7 @@ const Toprest = () => {
             </div>
           </div>
         </div>
-        <div className="flex overflow-hidden gap-5">
+        <div className="flex overflow-hidden gap-5 relative z-[-1]">
           {data?.map((d, i) => {
             return (
               <div
@@ -61,7 +61,7 @@ const Toprest = () => {
                 }}
                 className="duration-500 w-[270px] shrink-0"
               >
-                <RestaurantCard {...d} key={i} />
+                <RestaurantCard width="w-full md:w-[273px]" {...d} key={i} />
               </div>
             );
           })}

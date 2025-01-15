@@ -29,7 +29,7 @@ const Category = () => {
 
   return (
     <>
-      <div className="max-w-[1200px] mx-auto pt-[100px]">
+      <div className="max-w-[1200px] mx-auto pt-[100px] px-2">
         <div className="flex my-3 items-center justify-between">
           <div className="text-[25px] font-bold">Whats on your mind?</div>
           <div className="flex">
@@ -47,7 +47,7 @@ const Category = () => {
             </div>
           </div>
         </div>
-        <div className="flex overflow-hidden">
+        <div className="flex overflow-hidden relative z-[-1]">
           {categories.map((cat, i) => {
             return (
               <div

@@ -57,14 +57,16 @@ const OnlineDelivery = () => {
 
   return (
     <>
-      <div className="max-w-[1200px] mx-auto " ref={stickyRef}>
+      <div className="max-w-[1200px] mx-auto px-2" ref={stickyRef}>
         <div className="flex-col my-3 items-center justify-between">
           <div className="text-[25px] font-bold">
             Restaurant for online delivery in Saket
           </div>
           <div
             className={`max-w-[1200px] mx-auto flex gap-3  sticky-container duration-100 p-[15px] ${
-              isSticky ? "fixed top-2 z-[99999] bg-white w-full" : ""
+              isSticky
+                ? "fixed top-2 z-[99999] bg-white w-full max-w-[1400px]"
+                : ""
             }`}
             ref={stickyRef}
           >
@@ -78,7 +80,7 @@ const OnlineDelivery = () => {
             ))}
           </div>
         </div>
-        <div className="grid grid-cols-4 gap-3 content">
+        <div className="md:grid grid-cols-4 gap-3 content">
           {data.map((d, i) => (
             <RestaurantCard key={i} {...d} />
           ))}
