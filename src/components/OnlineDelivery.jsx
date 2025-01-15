@@ -53,6 +53,14 @@ const OnlineDelivery = () => {
     { i: 7, btnName: "Offers", iconName: <MdLocalOffer /> },
     { i: 8, btnName: "Rs. 400-Rs. 600", iconName: <LuBetweenVerticalEnd /> },
     { i: 9, btnName: "Less than Rs. 300", iconName: <FaLessThan /> },
+
+    { i: 3, btnName: "Fast Delivery", iconName: <FaShippingFast /> },
+    { i: 4, btnName: "New on Swiggy", iconName: <MdNewReleases /> },
+    { i: 5, btnName: "Rating 4.0+", iconName: <MdSecurityUpdateGood /> },
+    { i: 6, btnName: "Pure Veg", iconName: <FaLeaf /> },
+    { i: 7, btnName: "Offers", iconName: <MdLocalOffer /> },
+    { i: 8, btnName: "Rs. 400-Rs. 600", iconName: <LuBetweenVerticalEnd /> },
+    { i: 9, btnName: "Less than Rs. 300", iconName: <FaLessThan /> },
   ];
 
   return (
@@ -63,11 +71,12 @@ const OnlineDelivery = () => {
             Restaurant for online delivery in Saket
           </div>
           <div
-            className={`max-w-[1200px] mx-auto flex gap-3  sticky-container duration-100 p-[15px] ${
+            className={`flex overflow-x-auto gap-4 scrollbar-hide scroll-smooth px-2 w-full ${
               isSticky
                 ? "fixed top-2 z-[99999] bg-white w-full max-w-[1400px]"
                 : ""
             }`}
+            // ref={stickyRef}
             ref={stickyRef}
           >
             {entryChips.map((item) => (
