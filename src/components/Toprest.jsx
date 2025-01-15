@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import RestaurantCard from "./RestaurantCard";
 
 const Toprest = () => {
   const [data, setData] = useState([]);
+  const scrollRef = useRef(null);
 
   const fetchRestaurant = async () => {
     const response = await fetch(
@@ -20,13 +21,21 @@ const Toprest = () => {
   const [slide, setSlide] = useState(0);
 
   const nextSlide = () => {
-    if (data.length - 2 == slide) return false;
-    setSlide(slide + 4);
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: 800, // Adjust the scroll amount
+        behavior: "smooth",
+      });
+    }
   };
 
   const prevSlide = () => {
-    if (slide == 0) return false;
-    setSlide(slide - 4);
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -800, // Adjust the scroll amount
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
@@ -51,7 +60,11 @@ const Toprest = () => {
             </div>
           </div>
         </div>
-        <div className="flex overflow-hidden gap-5 relative z-[-1]">
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto gap-4 scrollbar-hide scroll-smooth px-2 w-full"
+          // className="flex overflow-hidden gap-5 relative z-[-1]"
+        >
           {data?.map((d, i) => {
             return (
               <div
