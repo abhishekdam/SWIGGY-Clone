@@ -50,14 +50,27 @@ const Header = () => {
         onClick={hideSideMenu}
       >
         <div
-          className="w-[500px] z-[999999] bg-white h-full absolute duration-[400ms] overflow-auto"
+          className="flex items-center flex-col px-4 py-8 w-[500px] z-[999999] bg-white h-full absolute duration-[400ms] overflow-auto"
           style={{
             left: toggle ? "0%" : "-100%",
           }}
           onClick={(e) => {
             e.stopPropagation();
           }}
-        ></div>
+        >
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your area"
+            className="w-full my-4 p-4 px-4 py-3 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-gray-700"
+          />
+          <button
+            type="submit"
+            className="w-[50%] bg-blue-500 text-white font-medium py-2 rounded-md shadow hover:bg-blue-600 transition duration-200"
+          >
+            Submit
+          </button>
+        </div>
       </div>
       <header
         className={`p-[15px] shadow-xl text-[#686b78] fixed w-full top-0 bg-white ${
