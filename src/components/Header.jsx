@@ -5,7 +5,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { CgLogIn } from "react-icons/cg";
 import { LuBadgeHelp } from "react-icons/lu";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -17,6 +17,19 @@ const Header = () => {
   const hideSideMenu = () => {
     setToggle(false);
   };
+
+  useEffect(() => {
+    if (toggle) {
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      document.body.style.overflow = ""; // Restore scrolling
+    }
+
+    // Cleanup on component unmount
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [toggle]);
 
   const links = [
     { liName: "Search", icon: <IoSearchSharp /> },
@@ -37,7 +50,7 @@ const Header = () => {
         onClick={hideSideMenu}
       >
         <div
-          className="w-[500px] bg-white h-full absolute duration-[400ms]"
+          className="w-[500px] z-[999999] bg-white h-full absolute duration-[400ms] overflow-auto"
           style={{
             left: toggle ? "0%" : "-100%",
           }}
@@ -46,7 +59,11 @@ const Header = () => {
           }}
         ></div>
       </div>
-      <header className="p-[15px] shadow-xl text-[#686b78] fixed w-full top-0 bg-white z-[9999]">
+      <header
+        className={`p-[15px] shadow-xl text-[#686b78] fixed w-full top-0 bg-white ${
+          toggle ? `z-[-1]` : `z-[9999]`
+        }`}
+      >
         <div className="max-w-[1200px] mx-auto flex items-center">
           <div className="w-[55px]">
             <img
@@ -66,7 +83,7 @@ const Header = () => {
               className="inline text-[#f0851e] cursor-pointer"
             />
           </div>
-          <nav className="flex gap-7 list-none ml-auto text-[18px] font-semibold">
+          <nav className="hidden md:flex gap-7 list-none ml-auto text-[18px] font-semibold">
             {links.map((link, i) => {
               return (
                 <li
