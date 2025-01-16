@@ -3,7 +3,7 @@ import { RiStarFill } from "react-icons/ri";
 const RestaurantCard = (p) => {
   return (
     <div className={`${p.width} shrink-0  mb-3`}>
-      <div className="group h-[182px] rounded-[15px] overflow-hidden relative mb-3">
+      <div className="relative z-[-1] group h-[182px] rounded-[15px] overflow-hidden relative mb-3">
         <img
           className="group-hover:scale-110 duration-150 object-cover h-full w-full top-0"
           src={"http://localhost:5173/src/assets/images/" + p.image}

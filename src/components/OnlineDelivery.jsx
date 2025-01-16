@@ -73,7 +73,7 @@ const OnlineDelivery = () => {
           <div
             className={`flex overflow-x-auto gap-4 scrollbar-hide scroll-smooth px-2 w-full ${
               isSticky
-                ? "fixed top-2 z-[99999] bg-white w-full max-w-[1400px]"
+                ? "p-4 pl-0 fixed top-2 z-[99999] bg-white w-full max-w-[1200px]"
                 : ""
             }`}
             // ref={stickyRef}

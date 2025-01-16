@@ -18,7 +18,7 @@ const Toprest = () => {
     fetchRestaurant();
   }, []);
 
-  const [slide, setSlide] = useState(0);
+  // const [slide, setSlide] = useState(0);
 
   const nextSlide = () => {
     if (scrollRef.current) {
@@ -62,16 +62,16 @@ const Toprest = () => {
         </div>
         <div
           ref={scrollRef}
-          className="flex overflow-x-auto gap-4 scrollbar-hide scroll-smooth px-2 w-full"
+          className="z-[-1] flex overflow-x-auto gap-4 scrollbar-hide scroll-smooth px-2 w-full"
           // className="flex overflow-hidden gap-5 relative z-[-1]"
         >
           {data?.map((d, i) => {
             return (
               <div
                 key={i}
-                style={{
-                  transform: `translateX(-${slide * 80}%)`,
-                }}
+                // style={{
+                //   transform: `translateX(-${slide * 80}%)`,
+                // }}
                 className="duration-500 w-[270px] shrink-0"
               >
                 <RestaurantCard width="w-full md:w-[273px]" {...d} key={i} />
