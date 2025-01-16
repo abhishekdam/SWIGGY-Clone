@@ -15,9 +15,7 @@ const OnlineDelivery = () => {
   const [data, setData] = useState([]);
 
   const fetchRestaurant = async () => {
-    const response = await fetch(
-      "http://localhost:5173/src/assets/restaurantChan.json"
-    );
+    const response = await fetch("/assets/restaurantChan.json");
     const apiData = await response.json();
     setData(apiData);
   };

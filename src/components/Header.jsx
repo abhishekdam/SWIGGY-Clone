@@ -80,7 +80,7 @@ const Header = () => {
         <div className="max-w-[1200px] mx-auto flex items-center">
           <div className="w-[55px]">
             <img
-              src="src/assets/swiggy-logo.webp"
+              src="/assets/swiggy-logo.webp"
               className="w-full"
               alt="swiggy-logo"
             />

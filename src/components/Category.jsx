@@ -35,9 +35,7 @@ const Category = () => {
   };
 
   const fetchCategory = async () => {
-    const response = await fetch(
-      "http://localhost:5173/src/assets/category.json"
-    );
+    const response = await fetch("/assets/category.json");
     const data = await response.json();
     setCategories(data);
   };
@@ -81,10 +79,7 @@ const Category = () => {
                 // className="w-[150px] shrink-0 duration-500"
                 className="min-w-[150px] flex flex-col items-center justify-center cursor-pointer transition duration-300"
               >
-                <img
-                  src={"http://localhost:5173/src/assets/images/" + cat.image}
-                  alt=""
-                />
+                <img src={"/assets/images/" + cat.image} alt="" />
               </div>
             );
           })}

@@ -6,7 +6,7 @@ const RestaurantCard = (p) => {
       <div className="relative z-[-1] group h-[182px] rounded-[15px] overflow-hidden relative mb-3">
         <img
           className="group-hover:scale-110 duration-150 object-cover h-full w-full top-0"
-          src={"http://localhost:5173/src/assets/images/" + p.image}
+          src={"/assets/images/" + p.image}
           alt=""
         />
         <div className="image-overlay  absolute w-full h-full top-0 flex items-end p-2 text-[16px] md:text-[25px] font-bold text-white tracking-tighter">
