@@ -2,19 +2,19 @@ import { useEffect, useRef, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Category = () => {
-  const [slide, setSlide] = useState(0);
+  // const [slide, setSlide] = useState(0);
   const [categories, setCategories] = useState([]);
   const scrollRef = useRef(null);
 
-  const nextSlide = () => {
-    if (categories.length - 8 == slide) return false;
-    setSlide(slide + 6);
-  };
+  // const nextSlide = () => {
+  //   if (categories.length - 8 == slide) return false;
+  //   setSlide(slide + 6);
+  // };
 
-  const prevSlide = () => {
-    if (slide == 0) return false;
-    setSlide(slide - 6);
-  };
+  // const prevSlide = () => {
+  //   if (slide == 0) return false;
+  //   setSlide(slide - 6);
+  // };
 
   const scrollRight = () => {
     if (scrollRef.current) {
@@ -50,7 +50,7 @@ const Category = () => {
     <>
       <div className="max-w-[1200px] mx-auto pt-[100px] px-2">
         <div className="flex my-3 items-center justify-between">
-          <div className="text-[25px] font-bold">Whats on your mind?</div>
+          <div className="text-[25px] font-bold">What&apos;s on your mind?</div>
           <div className="flex">
             <div
               className="cursor-pointer flex items-center justify-center h-[30px] w-[30px] bg-slate-300 rounded-full mx-2"
